@@ -4,7 +4,7 @@ import { Text, StyleSheet, SafeAreaView, TextInput, Platform, TouchableOpacity }
 export function Home(){
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Welcome, Patrick</Text>
+      <Text style={styles.titleText}>Welcome, Patrick</Text>
 
       <TextInput 
         style={styles.input}
@@ -12,9 +12,16 @@ export function Home(){
         placeholderTextColor="#555"
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity 
+      style={styles.button}
+      activeOpacity={.7}
+      >
           <Text style={styles.buttonText}>Add</Text>
       </TouchableOpacity>
+
+      <Text style={styles.titleSkills}>
+          My Skills
+      </Text>
 
     </SafeAreaView>
   )
@@ -27,10 +34,16 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         paddingVertical: 70
     },
-    title: {
+    titleText: {
         color: '#fff',
         fontSize: 24,
         fontWeight: 'bold'
+    },
+    titleSkills: {
+        color: '#fff',
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginTop: 50
     },
     input: {
         backgroundColor: '#1F1E25',
@@ -44,9 +57,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#A370F7',
         padding: 15,
         borderRadius: 7,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 20
     },
     buttonText: {
-        color: '#FFF'
+        color: '#FFF',
+        fontSize: 17,
+        fontWeight: 'bold'
     }
 })
