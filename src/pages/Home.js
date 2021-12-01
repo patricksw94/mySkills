@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Text, StyleSheet, SafeAreaView, TextInput, Platform, TouchableOpacity } from 'react-native';
 
 export function Home(){
-    const [newSkill, setNewSkill] = useState();
+    const [newSkill, setNewSkill] = useState('');
+    const [mySkills, setMySkills] = useState([])
 
   return (
     <SafeAreaView style={styles.container}>
