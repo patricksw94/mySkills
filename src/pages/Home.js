@@ -27,18 +27,6 @@ export function Home() {
         onChangeText={setNewSkill}
       />
 
-      <TouchableOpacity
-       style={styles.button}
-        activeOpacity={0.7}
-        onPress={handleAddNewSkill}
-        >
-
-        <Text style={styles.buttonText}
-        >Add
-        </Text>
-
-      </TouchableOpacity>
-
       <Text style={styles.titleSkills}>
       My Skills
       </Text>
@@ -73,7 +61,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
-    marginVertical: 45
+    marginVertical: 40
   },
   input: {
     backgroundColor: '#1F1E25',
@@ -81,25 +69,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     padding: Platform.OS === 'ios' ? 15 : 10,
     marginTop: 30,
-    borderRadius: 7,
-  },
-  button: {
-    backgroundColor: '#A370F7',
-    padding: 15,
-    borderRadius: 7,
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  buttonText: {
-    color: '#FFF',
-    fontSize: 17,
-    fontWeight: 'bold',
+    borderRadius: 7
   },
   buttonSkill: {
       backgroundColor: '#1F1E25',
       padding: 15,
       borderRadius: 50,
-      alignItems: 'center'
+      alignItems: 'center',
+      marginVertical: 8
     },
     textSkill: {
         color: '#FFF',
