@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, StyleSheet, SafeAreaView, TextInput, Platform, TouchableOpacity } from 'react-native';
 
 export function Home(){
+    const [newSkill, setNewSkill] = useState();
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.titleText}>Welcome, Patrick</Text>
@@ -10,6 +12,7 @@ export function Home(){
         style={styles.input}
         placeholder="New skill"
         placeholderTextColor="#555"
+        onChangeText={setNewSkill}
       />
 
       <TouchableOpacity 
