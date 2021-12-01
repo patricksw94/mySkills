@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, SafeAreaView, TextInput, Platform } from 'react-native';
+import { Text, StyleSheet, SafeAreaView, TextInput, Platform, TouchableOpacity } from 'react-native';
 
 export function Home(){
   return (
@@ -11,6 +11,10 @@ export function Home(){
         placeholder="New skill"
         placeholderTextColor="#555"
       />
+
+      <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Add</Text>
+      </TouchableOpacity>
 
     </SafeAreaView>
   )
@@ -35,5 +39,14 @@ const styles = StyleSheet.create({
         padding: Platform.OS === 'ios' ? 15 : 10,
         marginTop: 30,
         borderRadius: 7
+    },
+    button: {
+        backgroundColor: '#A370F7',
+        padding: 15,
+        borderRadius: 7,
+        alignItems: 'center'
+    },
+    buttonText: {
+        color: '#FFF'
     }
 })
