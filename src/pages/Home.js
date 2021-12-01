@@ -36,7 +36,7 @@ export function Home() {
 
     {
             mySkills.map(skill => (
-                <SkillCard skill={skill} />
+                <SkillCard key={skill} skill={skill} />
             ))
     }
 
