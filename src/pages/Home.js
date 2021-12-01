@@ -43,11 +43,15 @@ export function Home() {
       My Skills
       </Text>
 
-      <TouchableOpacity style={styles.buttonSkill}>
+    {
+            mySkills.map(skill => (
+      <TouchableOpacity key={skill} style={styles.buttonSkill}>
         <Text style={styles.textSkill}>
-            teste
+            {skill}
         </Text>
       </TouchableOpacity>
+            ))
+    }
 
     </SafeAreaView>
   );
