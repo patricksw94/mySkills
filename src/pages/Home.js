@@ -12,6 +12,10 @@ export function Home() {
   const [newSkill, setNewSkill] = useState('');
   const [mySkills, setMySkills] = useState([]);
 
+  function handleAddNewSkill(){
+    setMySkills(oldState => [...oldState, newSkill]);
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.titleText}>Welcome, Patrick</Text>
@@ -26,6 +30,7 @@ export function Home() {
       <TouchableOpacity
        style={styles.button}
         activeOpacity={0.7}
+        onPress={handleAddNewSkill}
         >
 
         <Text style={styles.buttonText}
