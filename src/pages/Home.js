@@ -4,7 +4,7 @@ import {
   StyleSheet,
   SafeAreaView,
   TextInput,
-  Platform,
+  Platform
 } from 'react-native';
 import { Button } from '../components/Button';
 import { SkillCard } from '../components/SkillCard';
@@ -28,7 +28,7 @@ export function Home() {
         onChangeText={setNewSkill}
       />
 
-    <Button />
+    <Button onPress={handleAddNewSkill} />
 
       <Text style={styles.titleSkills}>
       My Skills
