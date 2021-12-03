@@ -30,7 +30,7 @@ export function Home() {
     }else{
       setGretting('Good night');
     }
-    
+
   }, [])
 
   return (
