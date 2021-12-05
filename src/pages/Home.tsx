@@ -5,7 +5,9 @@ import {
   SafeAreaView,
   TextInput,
   Platform,
-  FlatList
+  FlatList, 
+  TouchableWithoutFeedback,
+  Keyboard
 } from 'react-native';
 import { Button } from '../components/Button';
 import { SkillCard } from '../components/SkillCard';
@@ -50,6 +52,7 @@ export function Home() {
   }, [])
 
   return (
+    <TouchableWithoutFeedback onPress={()=> Keyboard.dismiss()}>
     <SafeAreaView style={styles.container}>
       <Text style={styles.titleText}>Welcome, Patrick</Text>
 
@@ -85,6 +88,7 @@ export function Home() {
     />
 
     </SafeAreaView>
+    </TouchableWithoutFeedback>
   );
 }
 
