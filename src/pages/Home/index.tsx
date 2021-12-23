@@ -1,16 +1,15 @@
 import React, {useState, useEffect} from 'react';
+
+import { Container, TitleText, Greetings, Input, TitleSkills, UserInfo, Photo } from './styles';
+
 import {
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  TextInput,
-  Platform,
   FlatList, 
   TouchableWithoutFeedback,
-  Keyboard
+  Keyboard,
 } from 'react-native';
-import { Button } from '../components/Button';
-import { SkillCard } from '../components/SkillCard';
+import { Button } from '../../components/Button';
+import { SkillCard } from '../../components/SkillCard';
+
 
 interface SkillData {
   id: string;
@@ -53,15 +52,18 @@ export function Home() {
 
   return (
     <TouchableWithoutFeedback onPress={()=> Keyboard.dismiss()}>
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.titleText}>Welcome, Patrick</Text>
+    <Container>
+      <UserInfo>
+      <Photo source={{ uri: 'https://avatars.githubusercontent.com/u/61481164?v=4' }}
+            />
+      <TitleText>Welcome, Patrick</TitleText>
+      </UserInfo>
 
-      <Text style={styles.greetings}>
+      <Greetings>
         { gretting }
-      </Text>
+      </Greetings>
 
-      <TextInput
-        style={styles.input}
+      <Input
         placeholder="New skill"
         placeholderTextColor="#555"
         onChangeText={setNewSkill}
@@ -72,9 +74,9 @@ export function Home() {
       onPress={handleAddNewSkill}
      />
 
-      <Text style={styles.titleSkills}>
+      <TitleSkills>
       My Skills
-      </Text>
+      </TitleSkills>
 
     <FlatList 
         data={mySkills}
@@ -87,38 +89,8 @@ export function Home() {
         )}
     />
 
-    </SafeAreaView>
+    </Container>
     </TouchableWithoutFeedback>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#121015',
-    paddingHorizontal: 30,
-    paddingVertical: 70,
-  },
-  titleText: {
-    color: '#fff',
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  titleSkills: {
-    color: '#fff',
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginVertical: 40
-  },
-  input: {
-    backgroundColor: '#1F1E25',
-    color: '#FFF',
-    fontSize: 18,
-    padding: Platform.OS === 'ios' ? 15 : 10,
-    marginTop: 30,
-    borderRadius: 7
-  },
-  greetings: {
-    color: '#FFF'
-  }
-});
