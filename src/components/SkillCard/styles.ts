@@ -7,7 +7,7 @@ export const ButtonSkill = styled(TouchableOpacity)`
     padding: 15px;
     border-radius: 50px;
     align-items: center;
-    margin: 0 8px;
+    margin: 5px 10px;
 `;
 
 export const TextSkill = styled.Text`
